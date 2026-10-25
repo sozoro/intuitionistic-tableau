@@ -16,6 +16,43 @@ classical tautology     : True
 ```
 
 ```console
+$ ./result/bin/intuitionistic-tableau 'not not (p or not p)'
+       F0: (("p" ∨ ("p" → ⊥)) → ⊥) → ⊥
+----------------------------------- F→₁
+       T1: ("p" ∨ ("p" → ⊥)) → ⊥
+       F1: ⊥
+------------------------------------ T→
+   F1: "p" ∨ ("p" → ⊥)            F1: ⊥
+   F1: ⊥                          T1: ⊥
+--------------------------- F∨
+   F1: "p" → ⊥
+   F1: ⊥
+   F1: "p"
+-------------------------- F→₁
+   T2: ("p" ∨ ("p" → ⊥)) → ⊥
+   F1: ⊥
+   F2: ⊥
+   F1: "p"
+   T2: "p"
+--------------------------- T→
+F2: "p" ∨ ("p" → ⊥)    F1: ⊥
+F1: ⊥                  F2: ⊥
+F2: ⊥                  T2: ⊥
+F1: "p"                F1: "p"
+T2: "p"                T2: "p"
+---------------- F∨
+F2: "p" → ⊥
+F1: ⊥
+F2: ⊥
+F1: "p"
+F2: "p"
+T2: "p"
+==================================================
+intuitionistic tautology: True
+classical tautology     : True
+```
+
+```console
 $ ./result/bin/intuitionistic-tableau 'p and not p'
   F0: "p" ∧ ("p" → ⊥)
 ------------------- F∧
