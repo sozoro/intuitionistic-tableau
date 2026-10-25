@@ -8,7 +8,7 @@ import           Control.Arrow                ((&&&))
 import           Control.Monad                (guard)
 import           Data.Char                    (isSpace)
 import           Data.List                    (groupBy, intercalate)
-import qualified Data.Map                     as M
+import qualified Data.Map.Strict              as M
 import           Data.Maybe                   (listToMaybe)
 import qualified Data.Set                     as S
 import           Numeric.Natural
